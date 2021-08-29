@@ -1,0 +1,22 @@
+README.md
+Makefile
+install.sh
+*.deb
+*.tar.gz
+
+{{ if ne .chezmoi.os "darwin" }}
+# macos specific files to ignore on other platforms
+{{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+# Linux specific files to ignore on other platforms
+.hushlogin
+{{ end }}
+
+{{ if ne .chezmoi.os "windows" }}
+# Windows specific files to ignore on other platforms
+Documents
+{{ else }}
+# Ignore these for Windows
+.inputrc
+{{ end }}
