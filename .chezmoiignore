@@ -2,6 +2,7 @@ README.md
 Makefile
 install.sh
 *.deb
+*.rpm
 *.tar.gz
 
 {{ if ne .chezmoi.os "darwin" }}
@@ -16,6 +17,7 @@ install.sh
 {{ if ne .chezmoi.os "windows" }}
 # Windows specific files to ignore on other platforms
 Documents
+AppData
 {{ else }}
 # Ignore these for Windows
 .inputrc
