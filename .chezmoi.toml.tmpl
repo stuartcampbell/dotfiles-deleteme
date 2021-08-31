@@ -1,0 +1,44 @@
+{{/* feature tags */}}
+{{- $headless := false -}}{{/* true if this machine does not have a screen and keyboard */}}
+{{- $transient := false -}}{{/* true if this machine is temporary, e.g. a cloud or VM instance */}}
+{{- $bnl := false -}}{{/* true if this machine should have BNL config */}}
+{{- $personal := false -}}{{/* true if this machine is a personal one */}}
+{{- "" -}}
+
+{{/* detect GitHub codespaces and VSCode remote containers */}}
+{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") -}}
+{{-   $headless = true -}}
+{{-   $transient = true -}}
+{{- end -}}
+
+{{- $hostname := .chezmoi.hostname -}}
+
+{{- if not $transient -}}
+{{-   if eq $hostname "blade15" "BLADE15" -}}
+{{-     $personal = true -}}
+{{-   else if eq $hostname "viper" -}}
+{{-     $bnl = true -}}
+{{-   else if eq $hostname "blade" -}}
+{{-     $personal = true -}}
+{{-   else -}}
+{{-     $transient = false -}}
+{{-   end -}}
+{{- end -}}
+
+{{- $name := "Stuart Campbell" -}}
+{{- $email := "" -}}
+{{- if $bnl -}}
+{{-   $email = "scampbell@bnl.gov" -}}
+{{- else -}}
+{{-   $email = "stuart@stuartcampbell.me" -}}
+{{- end -}}
+
+remove = true
+[data]
+  name = {{ $name | quote }}
+  email = {{ $email | quote }}
+  headless = {{ $headless }}
+  hostname = {{ $hostname | quote }}
+  transient = {{ $transient }}
+  bnl = {{ $bnl }}
+  personal = {{ $personal }}
