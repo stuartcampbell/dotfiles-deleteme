@@ -1,0 +1,13 @@
+[user]
+	name = {{ .name | quote }}
+	email = {{ .email | quote }}
+
+[init]
+  defaultBranch = main
+
+[github]
+  user = stuartcampbell
+
+[credential "https://github.com"]
+        helper =
+        helper = !/usr/bin/gh auth git-credential
