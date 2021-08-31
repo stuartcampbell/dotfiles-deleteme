@@ -1,6 +1,6 @@
-include config.d/nsls2-ssh-config
-include config.d/nsls2-admin-config
-include config.d/nsls2-config
+include config.d/bnl-common
+include config.d/n2sn-admin
+include config.d/n2sn-general
 
 Host *
     ForwardAgent yes
