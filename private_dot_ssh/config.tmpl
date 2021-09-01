@@ -1,10 +1,10 @@
+
+include config.d/bnl
+include config.d/n2sn
+
 HOST *.fedoraproject.org fedorapeople.org *.fedorahosted.org
 	IdentityFile ~/.ssh/id_rsa_fedora
 	User sic
-
-include config.d/bnl-common
-include config.d/n2sn-admin
-include config.d/n2sn-general
 
 Host *
     ForwardAgent yes
