@@ -16,7 +16,7 @@ Host *
     # open for 300 seconds before closing.
     ControlPersist 300s
 
-{{ if eq .chezmoi.osRelease.id "fedora" }}
+{{ if eq .chezmoi.osRelease.id "fedora" -}}
     PKCS11Provider /usr/lib64/pkcs11/opensc-pkcs11.so
 {{ end -}}
 
