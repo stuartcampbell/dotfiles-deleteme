@@ -1,0 +1,38 @@
+{{ if (not .headless) -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+extensions=(
+    github.copilot
+    golang.go
+    ms-azuretools.vscode-docker
+    ms-python.python
+    ms-mssql.mssql
+    ms-toolsai.jupyter
+    ms-vscode.powershell
+    ms-vscode-remote.remote-containers
+    ms-vscode-remote.remote-ssh
+    redhat.ansible
+    redhat.vscode-xml
+    redhat.vscode-yaml
+)
+
+{{ if (eq .chezmoi.os "windows") }}
+extensions+=(
+    ms-vscode-remote.remote-wsl
+)
+{{ end }}
+
+for extension in ${extensions[@]}; do
+	code --force --install-extension $extension
+done
+
+{{ if (eq .chezmoi.os "linux") }}
+if ! grep -qF fs.inotify.max_user_watches=524288 /etc/sysctl.conf; then
+	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+	sudo sysctl -p
+fi
+{{ end }}
+
+{{ end }}
