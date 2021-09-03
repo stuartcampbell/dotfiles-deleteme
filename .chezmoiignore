@@ -15,6 +15,7 @@ install.sh
 {{ if ne .chezmoi.os "linux" }}
 # Linux specific files to ignore on other platforms
 .hushlogin
+.local/share/fonts
 {{ end }}
 
 {{ if ne .chezmoi.os "windows" }}
