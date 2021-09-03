@@ -33,4 +33,5 @@ AppData
 {{ if not .transient}}
 .ssh
 .netrc
+.ssh/config.d/bnl
 {{ end }}
