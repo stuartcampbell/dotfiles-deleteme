@@ -1,5 +1,7 @@
 # Stuart's dotfiles and associated junk
 
+[![CI](https://github.com/stuartcampbell/dotfiles/actions/workflows/main.yml/badge.svg)](https://github.com/stuartcampbell/dotfiles/actions/workflows/main.yml)
+
 These are my dotfiles, they are managed using [`chezmoi`](https://www.chezmoi.io).
 
 Secrets are stored in [1Password](https://1password.com/), and so we need the 
