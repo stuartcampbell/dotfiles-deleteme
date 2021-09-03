@@ -30,8 +30,7 @@ AppData
 .zshrc
 {{ end }}
 
-{{ if not .transient}}
+{{ if .transient}}
 .ssh
 .netrc
-.ssh/config.d/bnl
 {{ end }}
