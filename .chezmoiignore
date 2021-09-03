@@ -29,3 +29,8 @@ AppData
 .ssh
 .zshrc
 {{ end }}
+
+{{ if not .transient}}
+.ssh
+.netrc
+{{ end }}
