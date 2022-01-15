@@ -1,0 +1,6 @@
+
+
+# List open ports 
+alias openports="netstat -tunlp"
+
+
