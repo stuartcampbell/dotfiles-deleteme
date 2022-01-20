@@ -3,4 +3,7 @@
 # List open ports 
 alias openports="netstat -tunlp"
 
+# SSH using password authentication
+alias sshpw="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no "
+
 
