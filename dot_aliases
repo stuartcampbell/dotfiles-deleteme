@@ -6,4 +6,6 @@ alias openports="netstat -tunlp"
 # SSH using password authentication
 alias sshpw="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no "
 
-
+# SSH SOCKS Proxy (background)
+alias ssh-socks-proxy="ssh -CnfND " 
+#alias ssh-socks-proxy-nsls2="ssh -CnfND 9100 "
