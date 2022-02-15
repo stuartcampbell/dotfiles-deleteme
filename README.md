@@ -1,6 +1,6 @@
 # Stuart's dotfiles and associated junk
 
-[![CI](https://github.com/stuartcampbell/dotfiles/actions/workflows/main.yml/badge.svg)](https://github.com/stuartcampbell/dotfiles/actions/workflows/main.yml)
+[![CI](https://github.com/stuartcampbell/dotfiles/actions/workflows/ci.yml/badge.svg)](https://github.com/stuartcampbell/dotfiles/actions/workflows/ci.yml)
 
 These are my dotfiles, they are managed using [`chezmoi`](https://www.chezmoi.io).
 
