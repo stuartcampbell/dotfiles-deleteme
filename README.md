@@ -17,5 +17,17 @@ Then, to login afterwards, run:
 
 Install them with:
 
-    chezmoi init stuartcampbell
+    chezmoi init --apply https://github.com/stuartcampbell/dotfiles.git
+
+Or to be a little more conservative:
+
+    chezmoi init https://github.com/stuartcampbell/dotfiles.git
+    
+Look at what changes would be applied
+
+    chezmoi diff
+    
+Now apply them
+
+    chezmoi apply -v
 
